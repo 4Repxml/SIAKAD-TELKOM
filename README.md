@@ -34,7 +34,7 @@ Make sure you have the following installed:
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/username/sistem-informasi-akademik-telkom.git
+git clone https://github.com/4Repxml/SIAKAD-TELKOM.git
 cd sistem-informasi-akademik-telkom
 ```
 
