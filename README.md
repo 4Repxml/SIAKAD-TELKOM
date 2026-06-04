@@ -35,7 +35,7 @@ Make sure you have the following installed:
 
 ```bash
 git clone https://github.com/4Repxml/SIAKAD-TELKOM.git
-cd sistem-informasi-akademik-telkom
+cd SIAKAD-TELKOM
 ```
 
 ### Step 2: Install Dependencies
