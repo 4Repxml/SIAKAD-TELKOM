@@ -1,4 +1,4 @@
-# Sistem Informasi Akademik Telkom (SIAKAD TELKOM)
+# Sistem Akademik Telkom (SIAKAD TELKOM)
 
 
 ## Features
