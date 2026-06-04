@@ -1,15 +1,14 @@
-# Sistem Informasi Akademik Telkom
+# Sistem Informasi Akademik Telkom (SIAKAD TELKOM)
 
-Tugas Besar Pemrograman Berbasis Objek - Sistem Informasi Akademik berbasis web untuk mengelola data mahasiswa, dosen, mata kuliah, jadwal, dan bimbingan.
 
-## Fitur
+## Features
 
-- 🔐 **Autentikasi** - Login & manajemen akun pengguna
-- 👨‍🎓 **Manajemen Mahasiswa** - CRUD data mahasiswa
-- 👨‍🏫 **Manajemen Dosen** - CRUD data dosen
-- 📚 **Manajemen Mata Kuliah** - CRUD data mata kuliah
-- 🗓️ **Manajemen Jadwal** - Pengelolaan jadwal kuliah
-- 📝 **Manajemen Bimbingan** - Pengelolaan sesi bimbingan akademik
+- 🔐 **Authentication** - User login & account management
+- 👨‍🎓 **Student Management** - CRUD student data
+- 👨‍🏫 **Lecturer Management** - CRUD lecturer data
+- 📚 **Course Management** - CRUD course data
+- 🗓️ **Schedule Management** - Academic schedule management
+- 📝 **Advising Management** - Academic advising session management
 
 ## Tech Stack
 
@@ -25,17 +24,17 @@ Tugas Besar Pemrograman Berbasis Objek - Sistem Informasi Akademik berbasis web 
 
 ### Prerequisites
 
-Pastikan kamu sudah menginstall:
+Make sure you have the following installed:
 
-- [PHP](https://www.php.net/) versi 8.2 atau lebih baru
+- [PHP](https://www.php.net/) version 8.2 or higher
 - [Composer](https://getcomposer.org/)
-- [Node.js](https://nodejs.org/) versi 18.x atau lebih baru
+- [Node.js](https://nodejs.org/) version 18.x or higher
 - [MySQL](https://www.mysql.com/) / [MariaDB](https://mariadb.org/)
 
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/username-kamu/sistem-informasi-akademik-telkom.git
+git clone https://github.com/username/sistem-informasi-akademik-telkom.git
 cd sistem-informasi-akademik-telkom
 ```
 
@@ -46,9 +45,9 @@ composer install
 npm install
 ```
 
-### Step 3: Konfigurasi Environment
+### Step 3: Configure Environment
 
-Copy file `.env.example` menjadi `.env`:
+Copy `.env.example` to `.env`:
 
 **Windows (Command Prompt):**
 ```bash
@@ -66,9 +65,9 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-### Step 5: Konfigurasi Database
+### Step 5: Configure Database
 
-Edit file `.env` dan sesuaikan konfigurasi database:
+Edit the `.env` file and adjust the database configuration:
 
 ```env
 DB_CONNECTION=mysql
@@ -79,7 +78,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### Step 6: Migrasi Database
+### Step 6: Run Database Migration
 
 ```bash
 php artisan migrate
@@ -91,30 +90,30 @@ php artisan migrate
 npm run build
 ```
 
-### Step 8: Jalankan Aplikasi
+### Step 8: Run the Application
 
 ```bash
 php artisan serve
 ```
 
-Atau jalankan semua sekaligus (server + queue + vite):
+Or run everything at once (server + queue + vite):
 
 ```bash
 composer run dev
 ```
 
-Akses aplikasi di browser:
+Access the application in your browser:
 
 ```
 http://localhost:8000
 ```
 
-## Struktur Proyek
+## Project Structure
 
 ```
 ├── app/
 │   ├── Http/
-│   │   ├── Controllers/    # Controller aplikasi
+│   │   ├── Controllers/    # Application controllers
 │   │   └── Requests/       # Form request validation
 │   ├── Models/             # Eloquent models
 │   └── Policies/           # Authorization policies
@@ -125,11 +124,3 @@ http://localhost:8000
 ├── .env.example
 └── composer.json
 ```
-
-## Tim Pengembang
-
-| Nama | NIM |
-|------|-----|
-| Nama Anggota 1 | 123456789 |
-| Nama Anggota 2 | 123456789 |
-| Nama Anggota 3 | 123456789 |
