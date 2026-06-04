@@ -1,59 +1,135 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Informasi Akademik Telkom
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Tugas Besar Pemrograman Berbasis Objek - Sistem Informasi Akademik berbasis web untuk mengelola data mahasiswa, dosen, mata kuliah, jadwal, dan bimbingan.
 
-## About Laravel
+## Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 🔐 **Autentikasi** - Login & manajemen akun pengguna
+- 👨‍🎓 **Manajemen Mahasiswa** - CRUD data mahasiswa
+- 👨‍🏫 **Manajemen Dosen** - CRUD data dosen
+- 📚 **Manajemen Mata Kuliah** - CRUD data mata kuliah
+- 🗓️ **Manajemen Jadwal** - Pengelolaan jadwal kuliah
+- 📝 **Manajemen Bimbingan** - Pengelolaan sesi bimbingan akademik
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Backend:** PHP 8.2, Laravel 12
 
-## Learning Laravel
+**Frontend:** Blade Template, Vite
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+**Auth:** Laravel Breeze
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Database:** MySQL
 
-## Laravel Sponsors
+## Setup Project
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Prerequisites
 
-### Premium Partners
+Pastikan kamu sudah menginstall:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- [PHP](https://www.php.net/) versi 8.2 atau lebih baru
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/) versi 18.x atau lebih baru
+- [MySQL](https://www.mysql.com/) / [MariaDB](https://mariadb.org/)
 
-## Contributing
+### Step 1: Clone Repository
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+git clone https://github.com/username-kamu/sistem-informasi-akademik-telkom.git
+cd sistem-informasi-akademik-telkom
+```
 
-## Code of Conduct
+### Step 2: Install Dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer install
+npm install
+```
 
-## Security Vulnerabilities
+### Step 3: Konfigurasi Environment
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Copy file `.env.example` menjadi `.env`:
 
-## License
+**Windows (Command Prompt):**
+```bash
+cat .env.example > .env
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Windows (PowerShell) / Linux / Mac:**
+```bash
+cp .env.example .env
+```
+
+### Step 4: Generate App Key
+
+```bash
+php artisan key:generate
+```
+
+### Step 5: Konfigurasi Database
+
+Edit file `.env` dan sesuaikan konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_siakad_telkom
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### Step 6: Migrasi Database
+
+```bash
+php artisan migrate
+```
+
+### Step 7: Build Assets
+
+```bash
+npm run build
+```
+
+### Step 8: Jalankan Aplikasi
+
+```bash
+php artisan serve
+```
+
+Atau jalankan semua sekaligus (server + queue + vite):
+
+```bash
+composer run dev
+```
+
+Akses aplikasi di browser:
+
+```
+http://localhost:8000
+```
+
+## Struktur Proyek
+
+```
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/    # Controller aplikasi
+│   │   └── Requests/       # Form request validation
+│   ├── Models/             # Eloquent models
+│   └── Policies/           # Authorization policies
+├── bootstrap/
+├── resources/
+│   └── views/              # Blade templates
+├── routes/
+├── .env.example
+└── composer.json
+```
+
+## Tim Pengembang
+
+| Nama | NIM |
+|------|-----|
+| Nama Anggota 1 | 123456789 |
+| Nama Anggota 2 | 123456789 |
+| Nama Anggota 3 | 123456789 |
